@@ -18,7 +18,7 @@ Used commands: aws jq sed bc date
 2. Drop all 3 scripts from `externalscripts` folder to your zabbix server `externalscripts` folder.  
   2.1 Check /etc/zabbix/zabbix_server.conf if in doubt about the location of that folder.
 3. Change zabbix user shell: `usermod -s /bin/bash zabbix`
-4. Install awscli: `yum -y install awscli`
+4. Install awscli and required packages: `yum -y install awscli jq`
 5. Configure aws cli with the credentials what you created in IAM. **use json** as output format!  
    5.1 To configure aws cli run: `aws configure`
 6. Manually run and test the scripts

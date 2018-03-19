@@ -61,3 +61,7 @@ Apply these to aws iam zabbix account.
     ]
 }
 ```
+
+### 4. Screenshot
+
+![graph1.png](src/graph1.png)

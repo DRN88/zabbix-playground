@@ -1,0 +1,2 @@
+#!/bin/bash
+/bin/aws s3api list-buckets | /bin/jq 'del(.Buckets[].CreationDate)|del(.Owner)|.+{"data":.Buckets}|del(.Buckets)' | /bin/sed 's/\"Name\"/\"{#BUCKETNAME}\"/g'

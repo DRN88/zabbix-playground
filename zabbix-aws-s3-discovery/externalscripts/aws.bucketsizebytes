@@ -19,7 +19,7 @@ if [ $# -eq 1 ]; then
     --statistics Average \
     --metric-name BucketSizeBytes \
     --dimensions Name=BucketName,Value="${1}" Name=StorageType,Value=StandardIAStorage | /bin/jq '.Datapoints[0].Average' | /bin/sed 's/null/0/')"
-  echo "${SIZE1} + ${SIZE2}" | bc
+  echo "${SIZE1} + ${SIZE2}" | /bin/bc
 fi
 if [ $# -eq 2 ]; then
   now=$(date +%s)

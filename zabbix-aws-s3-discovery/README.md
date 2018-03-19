@@ -1,8 +1,15 @@
 ## 1. About
 
+Automatically discovers your buckets in AWS S3 and then:
+Pulls 3 data:
+* StandardStorage type bucket size
+* StandardIAStorage type bucket size
+* Number of objects in buckets
+
 Works on CentOS 7 and Zabbix v3.4.7.  
-Automatically discovers your buckets in AWS S3.
-Pulls Cloudwatch metrics regarding to your buckets. Size and Number of objects.
+Pulls Cloudwatch metrics regarding to your buckets. Size and Number of objects.  
+Look through the scripts first. Adjust them to your needs.  
+Used commands: aws jq sed bc date  
 
 ## 2. Install and Configure
 
@@ -13,7 +20,8 @@ Pulls Cloudwatch metrics regarding to your buckets. Size and Number of objects.
   2.1 Check /etc/zabbix/zabbix_server.conf if in doubt about the location of that folder.
 3. Change zabbix user shell: `usermod -s /bin/bash zabbix`
 4. Install awscli: `yum -y install awscli`
-5. Configure aws cli with the credentials what you created in IAM. **use json** as output format!
+5. Configure aws cli with the credentials what you created in IAM. **use json** as output format!  
+   5.1 To configure aws cli run: `aws configure`
 6. Manually run and test the scripts
 7. Import the template: `templates\template-aws-s3-bucket-metrics.xml`
 8. Create a phantom host and apply the template  

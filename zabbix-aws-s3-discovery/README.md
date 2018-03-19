@@ -7,7 +7,6 @@ Pulls 3 data:
 * Number of objects in buckets
 
 Works on CentOS 7 and Zabbix v3.4.7.  
-Pulls Cloudwatch metrics regarding to your buckets. Size and Number of objects.  
 Look through the scripts first. Adjust them to your needs.  
 Used commands: aws jq sed bc date  
 
